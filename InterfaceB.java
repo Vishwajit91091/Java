@@ -1,6 +1,8 @@
-package com.pack1;
+package com.pack2;
 
 public interface InterfaceB {
- 
-	void msg();
+
+	default void meth1() {
+		System.out.println("Interface B Method..!");
+	}
 }

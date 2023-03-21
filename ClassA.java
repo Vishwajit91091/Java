@@ -1,26 +1,16 @@
-package com.pack1;
+package com.pack2;
 
-public class ClassA extends ClassB implements InterfaceA,InterfaceB
+public class ClassA implements InterfaceA,InterfaceB
 {
-   
 	public void meth1() {
-		System.out.println("Interface A abstract method Overriding");
+		InterfaceA.super.meth1();
+		InterfaceB.super.meth1();
 	}
-     public void msg() {
-    	System.out.println("Interface A abstract method Overriding"); 
-     }
-	public static void main(String[] args) {
 
+	public static void main(String[] args) {
 		InterfaceA aobj=new ClassA();
 		aobj.meth1();
-		aobj.meth2();
-		InterfaceA.meth3();
-		//aobj.meth4();//C:E because it is a private method 
-        System.out.println("=========================");
-        InterfaceB bobj=new ClassA();
-        bobj.msg();
-        System.out.println("=========================");
-        new ClassA().display();
+
 	}
 
 }
