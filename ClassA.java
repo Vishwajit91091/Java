@@ -1,26 +1,26 @@
-package controlstatement;
+package com.pack1;
 
-public class ClassA {
-	void meth1(int a, int b, int c) {
-		if (a > b) {
-			if (a > c)
-				System.out.println(a + " is the biggest among the three ");
-
-			else
-				System.out.println(c + " is biggest of among the three ");
-
-		} else {
-			if (b > c)
-				System.out.println(b + " is the biggest among the three ");
-
-			else
-				System.out.println(c + " is biggest of the three ");
-		}
-
+public class ClassA extends ClassB implements InterfaceA,InterfaceB
+{
+   
+	public void meth1() {
+		System.out.println("Interface A abstract method Overriding");
 	}
-
+     public void msg() {
+    	System.out.println("Interface A abstract method Overriding"); 
+     }
 	public static void main(String[] args) {
-		new ClassA().meth1(20, 10, 30);
+
+		InterfaceA aobj=new ClassA();
+		aobj.meth1();
+		aobj.meth2();
+		InterfaceA.meth3();
+		//aobj.meth4();//C:E because it is a private method 
+        System.out.println("=========================");
+        InterfaceB bobj=new ClassA();
+        bobj.msg();
+        System.out.println("=========================");
+        new ClassA().display();
 	}
 
 }
