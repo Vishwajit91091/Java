@@ -1,7 +1,8 @@
-package lamdaexpression;
+package methodrefrencing;
 
+@FunctionalInterface
 public interface InterfaceA 
 {
-	void meth1();
+	void show();
 
 }
