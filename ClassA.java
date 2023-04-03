@@ -1,28 +1,44 @@
-package garbagecollector;
+package lamdaexpression;
 
-public class ClassA 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+public class ClassA
 {
-	void meth1()
+	void display()
 	{
-		System.out.println("meth1() called");
-		ClassA aobj=new ClassA(); //(3rd) All the objs present inside the methods
+		System.out.println("Implementing Lamda Expression");
+	InterfaceA aobj=()-> 
+	{
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Please Enter 5 Integer value");
+		for(int i=1;i<=5;i++)
+		{
+			al.add(sc.nextInt());
+		}
+		System.out.println("al : "+al);
+		
+		Collections.sort(al);
+		ListIterator<Integer> li=al.listIterator();
+		while(li.hasNext())
+		{
+			System.out.print(li.next()+"  ");
+		}
+		System.out.println("\n");
+		while(li.hasPrevious())
+		{
+			System.out.print(li.previous()+" ");
+		}	
+	 };
+	 aobj.meth1();
 	}
-	protected  void finalize()
-	{
-		System.out.println("garbage has been collected ");
-	}
-
-	public static void main(String[] args) 
-	{
-		ClassA aobj1=new ClassA();
-		ClassA aobj2=new ClassA();
-		aobj1.meth1();
-		//aobj1=null; //(1st) if we r nullifying the refrance
-		//aobj1.meth1();// raises a NullPointerException
-		//aobj2=aobj1; //(2nd) if we r assining the refrance to another refrance
-		//aobj1.meth1();
-		System.gc();
-
+	public static void main(String[] args)
+    {
+	
+		new ClassA().display();
 	}
 
 }

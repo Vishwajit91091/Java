@@ -1,9 +1,7 @@
-package com.pack2;
+package lamdaexpression;
 
 public interface InterfaceA 
 {
-	default void meth1() {
-		System.out.println("Interface A Method..!");
-	}
+	void meth1();
 
 }

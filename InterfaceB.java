@@ -1,8 +1,7 @@
-package com.pack2;
+package lamdaexpression;
 
-public interface InterfaceB {
+public interface InterfaceB 
+{
+	void meth2(int m,int n);
 
-	default void meth1() {
-		System.out.println("Interface B Method..!");
-	}
 }
