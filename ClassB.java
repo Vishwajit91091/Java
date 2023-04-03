@@ -1,49 +1,22 @@
-package methodrefrencing;
+package streamapi;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Scanner;
-
-public class ClassB
+public class ClassB 
 {
-	void meth1()
+	static int i=5;//11
+	int j=10;
+
+
+	public static void main(String[] args)
 	{
-	ArrayList<Integer> al=new ArrayList<Integer>();
-	Scanner sc=new Scanner(System.in);
-    System.out.println("Please Enter 5 Integer Value");
-	for(int i=1;i<=5;i++)
-	{
-		al.add(sc.nextInt());
+		ClassB obj=new ClassB();
+		System.out.println(obj.i+" "+obj.j);
+		ClassB.i=obj.j+1;
+		obj.j=ClassB.i+1;
+		ClassB obj2=new ClassB();
+		System.out.println(obj2.i+" "+obj2.j);
+		
 	}
-	System.out.println("al : "+al);
-	Collections.sort(al);
 	
-	ListIterator<Integer> li=al.listIterator();
-	while(li.hasNext()) {
-		System.out.print(li.next()+" ");
-	}
-	System.out.println("\n");
-	while(li.hasPrevious()) {
-		System.out.print(li.previous()+" ");
-	}
-	sc.close();
-	
-	}
-	static void meth2()
-	{
-		System.out.println("this is static method refrencing");	
-	}
-	ClassB(){
-		System.out.println("this is constructor referencing");
-	}
-
-	public static void main(String[] args) 
-	{
-
-		new ClassB().meth1();
-	}
-
 }
+
+
